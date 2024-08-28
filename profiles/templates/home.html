@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* General Styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      header img {
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+
+      header p {
+        margin: 5px 0 15px 0;
+        font-style: italic;
+      }
+
+      /* Bio Section Styles */
+      #bio {
+        padding: 30px;
+        background-color: #fff;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Work Section Styles */
+      #work {
+        padding: 30px;
+        background-color: #fff;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .project {
+        background-color: #eaeaea;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+      }
+
+      .project:hover {
+        background-color: #ddd;
+      }
+
+      /* Footer Styles */
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="https://i.imgur.com/KvEuBiI.png" />
+      <h1>{{user.username}}</h1>
+      <p>Web Developer | Designer | Tech Enthusiast</p>
+    </header>
+    <section id="bio">
+      <h2>About Me</h2>
+      <p>{{user.first_name}} {{user.last_name}}</p>
+      <p>{{user.email}}</p>
+    </section>
+    <section id="work">
+      <h2>My Work</h2>
+      <p><a href="add_work">
+        <button type="submit" class="">add work</button></p></a>
+      </p>
+      {% for i in projects %}
+      <div class="project" id="project1">{{i.project_name}}<br>{{i.link}}</div>
+      {% endfor %}
+      <!-- <div class="project" id="project2">Project 2</div>
+      <div class="project" id="project3">Project 3</div> -->
+    </section>
+    <footer>
+      <p>Contact me at [your email]</p>
+    </footer>
+  </body>
+</html>

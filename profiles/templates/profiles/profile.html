@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="profile">
+    <h2>{{ user.username }}'s Profile</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ u_form.as_p }}
+            {{ p_form.as_p }}
+        </div>
+        <button class="btn btn-primary" type="submit">Update</button>
+    </form>
+</div>
+{% endblock %}
